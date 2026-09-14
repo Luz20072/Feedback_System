@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback-System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+        <section class="feedback-card">
+
+            <h1>Feedback-System</h1>
+
+            <h2>Feedback</h2>
+
+            <p class="intro">
+                Wir würden gerne wissen, wie dir
+                die Veranstaltung gefallen hat.
+            </p>
+
+
+            <!-- ================================= -->
+            <!-- TEILNAHME -->
+            <!-- ================================= -->
+
+            <div class="form-group">
+
+                <label for="participation">
+                    Hast du teilgenommen?
+                </label>
+
+                <select id="participation" name="participation" required>
+
+                    <option value="" disabled selected>
+                        Bitte auswählen
+                    </option>
+
+                    <option value="Teilgenommen">
+                        Ich habe teilgenommen
+                    </option>
+
+                    <option value="Nicht teilgenommen">
+                        Ich habe nicht teilgenommen
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- FEEDBACK-FORMULAR -->
+            <!-- ================================= -->
+
+            <form id="feedbackForm">
+
+
+                <!-- ================================= -->
+                <!-- NAME -->
+                <!-- ================================= -->
+
+                <div class="form-group">
+
+                    <label for="name">
+
+                        Name
+
+                        <span class="optional">
+                            (optional)
+                        </span>
+
+                    </label>
+
+                    <input type="text" id="name" name="name" maxlength="100"
+                        placeholder="Du kannst das Feedback anonym abgeben">
+
+                </div>
+
+
+                <!-- ================================= -->
+                <!-- NICHT TEILGENOMMEN -->
+                <!-- ================================= -->
+
+                <div id="notParticipatedForm" class="hidden">
+
+                    <div class="form-group">
+
+                        <label for="reason">
+                            Warum hast du nicht teilgenommen?
+                        </label>
+
+                        <select id="reason" name="reason">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Keine Zeit">
+                                Ich hatte keine Zeit
+                            </option>
+
+                            <option value="Zu schwer">
+                                Es war zu schwer
+                            </option>
+
+                            <option value="Keine Lust">
+                                Ich hatte keine Lust
+                            </option>
+
+                            <option value="Sonstige">
+                                Sonstige
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div id="additionalTextGroup" class="form-group hidden">
+
+                        <label for="additionalText">
+                            Was war der Grund?
+                        </label>
+
+                        <textarea id="additionalText" name="additionalText" maxlength="2000"
+                            placeholder="Beschreibe deinen Grund..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================= -->
+                <!-- TEILGENOMMEN -->
+                <!-- ================================= -->
+
+                <div id="participatedForm" class="hidden">
+
+
+                    <div class="form-group">
+
+                        <label for="overall_rating">
+                            Wie hat dir die Veranstaltung
+                            insgesamt gefallen?
+                        </label>
+
+                        <select id="overall_rating" name="overall_rating">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Sehr gut">
+                                Sehr gut
+                            </option>
+
+                            <option value="Gut">
+                                Gut
+                            </option>
+
+                            <option value="Okay">
+                                Okay
+                            </option>
+
+                            <option value="Eher schlecht">
+                                Eher schlecht
+                            </option>
+
+                            <option value="Sehr schlecht">
+                                Sehr schlecht
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="difficulty">
+                            Wie fandest du den Schwierigkeitsgrad?
+                        </label>
+
+                        <select id="difficulty" name="difficulty">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Viel zu leicht">
+                                Viel zu leicht
+                            </option>
+
+                            <option value="Eher zu leicht">
+                                Eher zu leicht
+                            </option>
+
+                            <option value="Genau richtig">
+                                Genau richtig
+                            </option>
+
+                            <option value="Eher zu schwer">
+                                Eher zu schwer
+                            </option>
+
+                            <option value="Viel zu schwer">
+                                Viel zu schwer
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="length_rating">
+                            Wie fandest du die Länge?
+                        </label>
+
+                        <select id="length_rating" name="length_rating">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Viel zu kurz">
+                                Viel zu kurz
+                            </option>
+
+                            <option value="Eher zu kurz">
+                                Eher zu kurz
+                            </option>
+
+                            <option value="Genau richtig">
+                                Genau richtig
+                            </option>
+
+                            <option value="Eher zu lang">
+                                Eher zu lang
+                            </option>
+
+                            <option value="Viel zu lang">
+                                Viel zu lang
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="clue_clarity">
+                            Wie verständlich waren die Fragen
+                            bzw. Hinweise?
+                        </label>
+
+                        <select id="clue_clarity" name="clue_clarity">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Sehr verständlich">
+                                Sehr verständlich
+                            </option>
+
+                            <option value="Eher verständlich">
+                                Eher verständlich
+                            </option>
+
+                            <option value="Teilweise verständlich">
+                                Teilweise verständlich
+                            </option>
+
+                            <option value="Eher unverständlich">
+                                Eher unverständlich
+                            </option>
+
+                            <option value="Sehr unverständlich">
+                                Sehr unverständlich
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="variety_rating">
+                            Wie abwechslungsreich fandest du
+                            die Inhalte?
+                        </label>
+
+                        <select id="variety_rating" name="variety_rating">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Sehr abwechslungsreich">
+                                Sehr abwechslungsreich
+                            </option>
+
+                            <option value="Eher abwechslungsreich">
+                                Eher abwechslungsreich
+                            </option>
+
+                            <option value="In Ordnung">
+                                In Ordnung
+                            </option>
+
+                            <option value="Eher eintönig">
+                                Eher eintönig
+                            </option>
+
+                            <option value="Sehr eintönig">
+                                Sehr eintönig
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="fun_rating">
+                            Wie viel Spaß hat dir die Veranstaltung gemacht?
+                        </label>
+
+                        <select id="fun_rating" name="fun_rating">
+
+                            <option value="" disabled selected>
+                                Bitte auswählen
+                            </option>
+
+                            <option value="Sehr viel">
+                                Sehr viel
+                            </option>
+
+                            <option value="Viel">
+                                Viel
+                            </option>
+
+                            <option value="Etwas">
+                                Etwas
+                            </option>
+
+                            <option value="Wenig">
+                                Wenig
+                            </option>
+
+                            <option value="Gar keinen">
+                                Gar keinen
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="positive_feedback">
+
+                            Was hat dir besonders gut gefallen?
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+                        <textarea id="positive_feedback" name="positive_feedback" maxlength="2000"
+                            placeholder="Deine Antwort..."></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="improvement_feedback">
+
+                            Was könnten wir verbessern?
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+                        <textarea id="improvement_feedback" name="improvement_feedback" maxlength="2000"
+                            placeholder="Deine Antwort..."></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="additional_feedback">
+
+                            Hast du noch weitere Anmerkungen?
+
+                            <span class="optional">
+                                (optional)
+                            </span>
+
+                        </label>
+
+                        <textarea id="additional_feedback" name="additional_feedback" maxlength="2000"
+                            placeholder="Deine Antwort..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================= -->
+                <!-- ABSENDEN -->
+                <!-- ================================= -->
+
+                <button type="submit" id="submitButton">
+                    Feedback absenden
+                </button>
+
+
+                <p id="statusMessage" class="status"></p>
+
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

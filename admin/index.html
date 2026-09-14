@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feedback-System – Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+</head>
+
+
+<body>
+
+    <main class="container">
+
+
+        <!-- ================================= -->
+        <!-- LOGIN -->
+        <!-- ================================= -->
+
+        <section id="loginSection" class="card">
+
+            <h1>
+                Feedback-System
+            </h1>
+
+            <h2>
+                Admin-Bereich
+            </h2>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-Mail
+                    </label>
+
+                    <input type="email" id="email" required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Passwort
+                    </label>
+
+                    <input type="password" id="password" required>
+
+                </div>
+
+
+                <button type="submit">
+                    Anmelden
+                </button>
+
+
+                <p id="loginStatus"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- ADMIN -->
+        <!-- ================================= -->
+
+        <section id="adminSection" class="hidden">
+
+
+            <!-- HEADER -->
+
+            <div class="header">
+
+                <div>
+
+                    <h1>
+                        Feedback-Auswertung
+                    </h1>
+
+                    <p>
+                        Übersicht der eingegangenen Rückmeldungen
+                    </p>
+
+                </div>
+
+
+                <button id="logoutButton" class="logout">
+                    Abmelden
+                </button>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- STATISTIK -->
+            <!-- ================================= -->
+
+            <div class="statistics">
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="totalCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Feedbacks insgesamt
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="participantCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Teilgenommen
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="nonParticipantCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Nicht teilgenommen
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="noTimeCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Keine Zeit
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="tooHardCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Zu schwer
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="noDesireCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Keine Lust
+                    </span>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <span class="stat-number" id="otherCount">
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Sonstige
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- FEEDBACKS -->
+            <!-- ================================= -->
+
+            <div class="feedback-header">
+
+                <h2>
+                    Feedbacks
+                </h2>
+
+
+                <div class="feedback-actions">
+
+                    <button id="refreshButton" class="refresh">
+                        Aktualisieren
+                    </button>
+
+
+                    <button type="button" id="deleteAllButton" class="delete-all">
+                        Alle löschen
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div id="feedbackList">
+
+                <p>
+                    Lade Feedbacks...
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>
